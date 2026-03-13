@@ -1,0 +1,17 @@
+{
+  "name": "git-branching-and-env-ex1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev node index.js",
+    "release": "NODE_ENV=release node index.js",
+    "prod": "NODE_ENV=prod node index.js"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "node": "^25.6.1"
+  }
+}

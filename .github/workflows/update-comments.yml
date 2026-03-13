@@ -1,0 +1,23 @@
+name: Update Comment
+
+on:
+  workflow_dispatch:
+  issue_comment:
+    types: [created]
+
+jobs:
+  update-comment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Update or create comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          comment-id: ${{ github.event.comment.id }}
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            🔄 This comment was automatically updated!
+            - Triggered by: ${{ github.actor }}
+            - Original message: ${{ github.event.comment.body }}
+          edit-mode: replace
